@@ -62,3 +62,28 @@ https://drive.google.com/drive/folders/1feL5X6epYQiGaT-dHpgV7yWU7_ZthVVI?usp=sha
 #git
 git remote add origin git@github.com:angpao/classifier.git
 git push -u origin main
+git remote add origin git@github.com:angpao/segmentation.git
+git branch -M main
+git push -u origin main
+
+#tensorboard
+
+tensorboard --logdir=runs/
+http://localhost:6006/?darkMode=true#timeseries
+
+#recall
+case 1 : if recall is low in tensorboard because predict is little in image (ignore some class So should weight increase ) predict mistake , loss is high in loss_fn = nn.crossentropyloss ([2.0,1.0,1.0])
+case 2 : no label some data maybe class 1 ,class 2 or class 3 So ignore it by adding unknown class (0.0)
+loss_fn = nn.crossentropyloss ([2.0,1.0,1.0,0.0])
+
+#camera
+python io stream
+snapshot -> forward part in model
+
+#loss no reduce
+check prediction to make sense if not make sense is bug image input uint8 to float32
+change model to big and deep
+create big dataset
+
+#auto label image
+use GAN to generate segmentation
