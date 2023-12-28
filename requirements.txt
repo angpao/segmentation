@@ -1,0 +1,13 @@
+torch
+torchvision
+torchaudio
+pandas
+numpy
+matplotlib
+pillow
+albumentations
+tensorboard
+imgaug
+spacy
+torchtext
+torchdata
